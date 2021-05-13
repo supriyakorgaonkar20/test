@@ -12,7 +12,6 @@
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-	console.log('test1');
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
@@ -33,7 +32,7 @@
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
-console.log('test2');
+
 		embedded_svc.init(
 			'https://unify-snhu--dev1.my.salesforce.com',
 			'https://dev1-mysnhu.cs36.force.com/applicantportal',
@@ -52,7 +51,6 @@ console.log('test2');
 	};
 
 	if (!window.embedded_svc) {
-	console.log('test3');
 		var s = document.createElement('script');
 		s.setAttribute('src', 'https://unify-snhu--dev1.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
