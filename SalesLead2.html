@@ -16,7 +16,15 @@
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-		
+		embedded_svc.settings.extraPrechatFormDetails = [{ 
+			"value":"Web",
+			"label":"Source",
+			"displayToAgent":true
+		},{ 
+			"value":"TestUTM",
+			"transcriptFields":[ "Citizenship__c" ],
+			"displayToAgent":true
+		}];
 		embedded_svc.settings.extraPrechatInfo = [
 		{
 		  "entityFieldMaps":[{"doCreate":true,"doFind":false,"fieldName":"LastName","isExactMatch":false,"label":"Last Name"},
@@ -38,15 +46,7 @@
 		  "entityName":"Interaction__c",
 		  "showOnCreate": true
 		}];
-		embedded_svc.settings.extraPrechatFormDetails = [{ 
-			"value":"Web",
-			"label":"Source",
-			"displayToAgent":true
-		},{ 
-			"value":"TestUTM",
-			"transcriptFields":[ "Citizenship__c" ],
-			"displayToAgent":true
-		}];
+		
 	
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
