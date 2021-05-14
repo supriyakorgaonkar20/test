@@ -16,8 +16,29 @@
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-		embedded_svc.settings.extraPrechatInfo = [{
-		  "entityFieldMaps":[{"doCreate":true,"doFind":false,"fieldName":"Last_Name__c","isExactMatch":false,"label":"Last Name"}],
+		embedded_svc.settings.extraPrechatInfo = [
+		{
+		  "entityFieldMaps":[{"doCreate":true,"doFind":false,"fieldName":"LastName","isExactMatch":false,"label":"Last Name"},
+				     {"doCreate":true,"doFind":false,"fieldName":"FirstName","isExactMatch":false,"label":"First Name"},
+				     {"doCreate":true,"doFind":true,"fieldName":"Email","isExactMatch":true,"label":"Email"},
+				     {"doCreate":true,"doFind":false,"fieldName":"MobilePhone","isExactMatch":false,"label":"Mobile"}],
+		  "entityName":"Lead",
+		  "showOnCreate": true,
+		  "linkToEntityName": "Interaction__c",
+		  "linkToEntityField": "Lead_ID__c",
+		  "saveToTranscript": "LeadId"
+		},
+		{
+		  "entityFieldMaps":[{"doCreate":false,"doFind":true,"fieldName":"Email","isExactMatch":true,"label":"Email"}],
+		  "entityName":"Contact",
+		  "showOnCreate": true,
+		  "saveToTranscript": "ContactId"
+		},
+		{
+		  "entityFieldMaps":[{"doCreate":true,"doFind":false,"fieldName":"Last_Name__c","isExactMatch":false,"label":"Last Name"},
+				     {"doCreate":true,"doFind":false,"fieldName":"First_Name__c","isExactMatch":false,"label":"First Name"},
+				     {"doCreate":true,"doFind":false,"fieldName":"Email__c","isExactMatch":false,"label":"Email"},
+				     {"doCreate":true,"doFind":false,"fieldName":"Phone__c","isExactMatch":false,"label":"Mobile"}],
 		  "entityName":"Interaction__c",
 		  "showOnCreate": true
 		}];
