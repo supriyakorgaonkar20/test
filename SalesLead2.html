@@ -16,9 +16,6 @@
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-		/*embedded_svc.settings.prepopulatedPrechatFields = {
-    			Souce: "Web"
-		};*/
 		
 		embedded_svc.settings.extraPrechatInfo = [
 		{
@@ -40,7 +37,11 @@
 		  "entityName":"Interaction__c",
 		  "showOnCreate": true
 		}];
-		
+		embedded_svc.settings.extraPrechatFormDetails = [{ 
+			"value":"TestUTM",
+			"transcriptFields":[ "Citizenship__c" ],
+			"displayToAgent":true
+		}];
 	
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
