@@ -16,10 +16,10 @@
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-		embedded_svc.settings.extraPrechatFormDetails = [{ 
-			"value":"Web",
-			"label":"Source",
-			"displayToAgent":true
+		embedded_svc.settings.extraPrechatFormDetails = [{
+ 			"label": "LeadSource",
+  			"value": "Web",
+  			"displayToAgent": true
 		},{ 
 			"value":"TestUTM",
 			"transcriptFields":[ "Citizenship__c" ],
@@ -31,7 +31,7 @@
 				     {"doCreate":true,"doFind":false,"fieldName":"FirstName","isExactMatch":false,"label":"First Name"},
 				     {"doCreate":true,"doFind":true,"fieldName":"Email","isExactMatch":true,"label":"Email"},
 				     {"doCreate":true,"doFind":false,"fieldName":"MobilePhone","isExactMatch":false,"label":"Mobile"},
-				     {"doCreate":true,"doFind":false,"fieldName":"LeadSource","isExactMatch":false,"label":"Source"}],
+				     {"doCreate":true,"doFind":false,"fieldName":"LeadSource","isExactMatch":false,"label":"LeadSource"}],
 		  "entityName":"Lead",
 		  "showOnCreate": true,
 		  "linkToEntityName": "Interaction__c",
