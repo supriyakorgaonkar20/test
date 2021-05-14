@@ -16,35 +16,11 @@
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-		embedded_svc.settings.extraPrechatInfo = [/*{
-		  "entityFieldMaps": [{
-			"doCreate":true,
-			"doFind":false,
-			"fieldName":"Last_Name__c",
-			"isExactMatch":false,
-			"label":"Last Name"
-		  }, {
-			"doCreate":true,
-			"doFind":false,
-			"fieldName":"First_Name__c",
-			"isExactMatch":false,
-			"label":"First Name"
-		  }, {
-			"doCreate":true,
-			"doFind":false,
-			"fieldName":"Email__c",
-			"isExactMatch":false,
-			"label":"Email"
-		  }, {
-			"doCreate":true,
-			"doFind":false,
-			"fieldName":"Phone__c",
-			"isExactMatch":false,
-			"label":"Mobile"
-		  }],
+		embedded_svc.settings.extraPrechatInfo = [{
+		  "entityFieldMaps":[{"doCreate":true,"doFind":false,"fieldName":"Last_Name__c","isExactMatch":false,"label":"Last Name"}],
 		  "entityName":"Interaction__c",
 		  "showOnCreate": true
-		}*/];
+		}];
 		embedded_svc.settings.extraPrechatFormDetails = [{ 
 			"value":"TestUTM",
 			"transcriptFields":[ "Citizenship__c" ],
