@@ -16,12 +16,16 @@
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.prepopulatedPrechatFields = {
+    			Souce: "Web"
+		};
 		embedded_svc.settings.extraPrechatInfo = [
 		{
 		  "entityFieldMaps":[{"doCreate":true,"doFind":false,"fieldName":"LastName","isExactMatch":false,"label":"Last Name"},
 				     {"doCreate":true,"doFind":false,"fieldName":"FirstName","isExactMatch":false,"label":"First Name"},
 				     {"doCreate":true,"doFind":true,"fieldName":"Email","isExactMatch":true,"label":"Email"},
-				     {"doCreate":true,"doFind":false,"fieldName":"MobilePhone","isExactMatch":false,"label":"Mobile"}],
+				     {"doCreate":true,"doFind":false,"fieldName":"MobilePhone","isExactMatch":false,"label":"Mobile"},
+				     {"doCreate":true,"doFind":false,"fieldName":"LeadSource","isExactMatch":false,"label":"Souce"}],
 		  "entityName":"Lead",
 		  "showOnCreate": true,
 		  "linkToEntityName": "Interaction__c",
