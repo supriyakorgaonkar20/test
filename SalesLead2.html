@@ -13,7 +13,7 @@
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
-	var testEmail = 'terssdfsd@sdfsd.sdfsd';
+	
 	
 	var initESW = function(gslbBaseURL) {
 		
@@ -101,6 +101,7 @@
 		var s = document.createElement('script');
 		s.setAttribute('src', 'https://unify-snhu--dev1.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
+			var testEmail = 'terssdfsd@sdfsd.sdfsd';
 			initESW(null);
 		};
 		document.body.appendChild(s);
