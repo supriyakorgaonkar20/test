@@ -28,7 +28,7 @@
 			"transcriptFields":[ "Citizenship__c" ],
 			"displayToAgent":true
 		}];
-		console.log('hello-',embedded_svc.settings.extraPrechatFormDetails);
+		console.log('hello-',embedded_svc.settings);
 		embedded_svc.settings.extraPrechatInfo = [
 		{
 		  "entityFieldMaps":[{"doCreate":true,"doFind":false,"fieldName":"LastName","isExactMatch":false,"label":"Last Name"},
@@ -74,7 +74,7 @@
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
-
+		console.log('hello2-',embedded_svc.settings);
 		embedded_svc.init(
 			'https://unify-snhu--dev1.my.salesforce.com',
 			'https://dev1-unify-snhu.cs36.force.com/testSite',
