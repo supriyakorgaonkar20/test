@@ -33,28 +33,33 @@
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 		var test2 = 'supriya';
-		embedded_svc.settings.extraPrechatFormDetails = [{
-            "label":"Topic",
-            "transcriptFields":[ "Chat_Subject__c" ],
-            "displayToAgent": true
+		embedded_svc.settings.extraPrechatFormDetails = [
+		{
+		    "label":"LeadId",
+		    "displayToAgent": true
+		},
+		{
+            		"label":"Topic",
+            		"transcriptFields":[ "Chat_Subject__c" ],
+            		"displayToAgent": true
 		},{
 		    "label":"Details Field",
 		    "value": test2,
 		    "transcriptFields":[ "Test_Detail_Description__c" ],
 		    "displayToAgent": true
 		},{"label":"Text", "transcriptFields": ["Test_Embedded_Skills__c"]}];
-	
+		
 		embedded_svc.settings.extraPrechatInfo = [
 		{
 		  "entityFieldMaps":[
-				     {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"Topic"}],
+				     {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"LeadId"}],
 		  "entityName":"Lead",
 		  "showOnCreate": true,
 		  "saveToTranscript": "LeadId"
 		},
 		{
 		  "entityFieldMaps":[
-				     {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"Topic"}],
+				     {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"LeadId"}],
 		  "entityName":"Contact",
 		  "showOnCreate": true,
 		  "saveToTranscript": "ContactId"
