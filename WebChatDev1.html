@@ -63,6 +63,25 @@
     } else {
       initESW('https://service.force.com');
     }
+    
+    //[Anamika-]-Added to make the chat button disappear
+    function checkAvailability() {
+		const elementEnabled = document.getElementsByClassName('uiButton helpButtonEnabled');
+		const elementDisabled = document.getElementsByClassName('uiButton helpButtonDisabled');
+		if(elementEnabled && elementEnabled.length > 0) {
+		    document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "block";
+		}
+		if(elementDisabled && elementDisabled.length > 0) {
+		    document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
+		}     
+	}
+
+   
+    window.setInterval(function () {
+        checkAvailability();
+    }, 500);
+    //End
+      
   </script>
 </body>
 </html>
