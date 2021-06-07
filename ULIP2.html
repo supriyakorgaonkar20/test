@@ -32,7 +32,7 @@
 	
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
-	var event = new CustomEvent("utmEvent", {'detail': {
+	const event = new CustomEvent('utmEvent', {detail: {
         utm_Content: document.getElementById("utmContent"),
         utm_Campaign: document.getElementById("utmCampaign")
     }});
