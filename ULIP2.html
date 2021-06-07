@@ -27,8 +27,17 @@
 	}
 </style>
 <body>
+	<input type="hidden" name="UTMContent" id="utmContent" value="Test1"/>
+	<input type="hidden" name="UTMCampaign" id="utmCampaign" value="Test2"/>
+	
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
+	var customevent = new CustomEvent("utmEvent", {'detail': {
+        utm_Content: document.getElementById("utmContent"),
+        utm_Campaign: document.getElementById("utmCampaign")
+    }});
+    this.dispatchEvent(customevent);
+	}
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -149,7 +158,8 @@ console.log("Snippet settings file loaded.");	// Logs that the snippet settings 
 	
 		
 })();*/
-
+	
+	
 
 document.addEventListener(
 	"setCustomField",
