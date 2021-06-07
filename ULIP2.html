@@ -27,13 +27,15 @@
 	}
 </style>
 <body>
-	<input type="hidden" name="UTMContent" id="utmContent" defaultvalue="Test1"/>
-	<input type="hidden" name="UTMCampaign" id="utmCampaign" defaultvalue="Test2"/>
+	<input type="hidden" name="UTMContent" id="utmContent" />
+	<input type="hidden" name="UTMCampaign" id="utmCampaign" />
 	
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
-	var utmContent = document.getElementById("utmContent").defaultvalue;
-	var utmCampaign = document.getElementById("utmCampaign").defaultvalue;
+	document.getElementById("utmContent").value = 'test1';
+	document.getElementById("utmCampaign").value='test2';
+	var utmContent = document.getElementById("utmContent").value;
+	var utmCampaign = document.getElementById("utmCampaign").value;
 	console.log('var1 value>>'+utmContent);
 	console.log('var2 value>>'+utmCampaign);
 	document.body.addEventListener(
