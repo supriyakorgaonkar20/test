@@ -32,6 +32,18 @@
 	
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
+	document.addEventListener(
+	"utmEvent",
+	function(event) {
+		//console.log('event.detail.customField-'+event.detail.customField);
+		//console.log('event.detail.topic-'+event.detail.topic);
+console.log('kushal'+event.detail.utmContent);
+		//embedded_svc.settings.extraPrechatFormDetails[2].value = "test";
+		//embedded_svc.settings.extraPrechatFormDetails[1].value = "test";
+		
+	},
+	false
+);
 	const event = new CustomEvent('utmEvent', {detail: {
         utm_Content: () => document.getElementById("utmContent"),
         utm_Campaign: () => document.getElementById("utmCampaign")
