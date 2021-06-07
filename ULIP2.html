@@ -32,7 +32,11 @@
 	
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
-	document.addEventListener(
+	var utmContent = document.getElementById("utmContent");
+	var utmCampaign = document.getElementById("utmCampaign");
+	console.log('var1 value>>'+utmContent);
+	console.log('var2 value>>'+utmCampaign);
+	document.body.addEventListener(
 	"utmEvent",
 	function(event) {
 		//console.log('event.detail.customField-'+event.detail.customField);
@@ -44,11 +48,11 @@ console.log('kushal'+event.detail.utmContent);
 	},
 	false
 );
-	const event = new CustomEvent('utmEvent', {detail: {
-        utm_Content: () => document.getElementById("utmContent"),
-        utm_Campaign: () => document.getElementById("utmCampaign")
+	let event = new CustomEvent('utmEvent', {detail: {
+        utm_Content:utmContent,
+        utm_Campaign:utmCampaign
     }});
-    document.dispatchEvent(event);
+    document.body.dispatchEvent(event);
 	
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
