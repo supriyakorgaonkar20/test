@@ -48,7 +48,7 @@ console.log('kushal'+event.detail.utmContent);
         utm_Content: () => document.getElementById("utmContent"),
         utm_Campaign: () => document.getElementById("utmCampaign")
     }});
-    this.dispatchEvent(event);
+    document.dispatchEvent(event);
 	
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
