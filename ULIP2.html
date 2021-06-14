@@ -27,6 +27,7 @@
 	}
 </style>
 <body>
+	<input type="text" name="errorMsg"  id="errorMsg" value=''/>
 	<input type="hidden" name="UTMContent" id="utmContent" value='test1'/>
 	<input type="hidden" name="UTMCampaign" id="utmCampaign" value='test2'/>
 	
@@ -202,7 +203,7 @@ debugger;
 		//embedded_svc.settings.extraPrechatFormDetails[2].value = "test";
 		//embedded_svc.settings.extraPrechatFormDetails[1].value = "test";
 		embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";
-				
+		document.getElementbyId("errorMsg").value = event.detail.myerror;		
 		// Fire startChat callback.
 		event.detail.callback();
 	},
