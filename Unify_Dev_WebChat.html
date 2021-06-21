@@ -34,13 +34,32 @@
             embedded_svc.settings.extraPrechatInfo = [
             {
             "entityFieldMaps":[
-                        {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"Lead"}],
+                        {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"LeadOrContactId"}],
             "entityName":"Lead",
             "showOnCreate": true,
             "saveToTranscript": "LeadId"
             },
             {
             "entityFieldMaps":[
+                {
+		"doCreate":false,
+		"doFind":false,
+		"fieldName":"LastName",
+		"isExactMatch":false,
+		"label":"Last Name"
+	  }, {
+		"doCreate":false,
+		"doFind":false,
+		"fieldName":"FirstName",
+		"isExactMatch":false,
+		"label":"First Name"
+	  }, {
+		"doCreate":false,
+		"doFind":true,
+		"fieldName":"Email",
+		"isExactMatch":true,
+		"label":"Email"
+	  },
                         {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"LeadOrContactId"}],
             "entityName":"Contact",
             "showOnCreate": true,
