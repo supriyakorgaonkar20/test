@@ -58,7 +58,10 @@ console.log('kushal'+event.detail.utm_Content);
     }});
     document.body.dispatchEvent(event);
 	
-	window.name = "myWindowName";
+	window.name = {
+		leadid:'abc',
+		teststr:'abc'
+	};
 	
 	
 	var initESW = function(gslbBaseURL) {
