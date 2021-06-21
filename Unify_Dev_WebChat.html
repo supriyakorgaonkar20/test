@@ -34,7 +34,7 @@
             embedded_svc.settings.extraPrechatInfo = [
             {
             "entityFieldMaps":[
-                        {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"LeadOrContactId"}],
+                        {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"Lead"}],
             "entityName":"Lead",
             "showOnCreate": true,
             "saveToTranscript": "LeadId"
@@ -119,7 +119,7 @@
     console.log('test');
             //embedded_svc.settings.extraPrechatFormDetails[2].value = "test";
             //embedded_svc.settings.extraPrechatFormDetails[1].value = "test";
-            //embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";
+            embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";
                     
             // Fire startChat callback.
             event.detail.callback();
