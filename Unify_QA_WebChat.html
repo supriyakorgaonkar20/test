@@ -1,5 +1,8 @@
+QA
+
 <html lang="en">
     <head>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"> 
     </head>
     <body>
     <h1>Unify QA Web Chat Testing</h1>
@@ -23,7 +26,6 @@
                 "label":"LeadOrContactId",
                 "displayToAgent": true
             },
-            //Modification for US#91606 [Bhawna Nawani]
             {
                 "label":"Topic",
                 "transcriptFields":[ "Chat_Subject__c" ],
@@ -42,26 +44,31 @@
             },
             {
             "entityFieldMaps":[
+                {
+		"doCreate":false,
+		"doFind":false,
+		"fieldName":"LastName",
+		"isExactMatch":false,
+		"label":"Last Name"
+	  }, {
+		"doCreate":false,
+		"doFind":false,
+		"fieldName":"FirstName",
+		"isExactMatch":false,
+		"label":"First Name"
+	  }, {
+		"doCreate":false,
+		"doFind":false,
+		"fieldName":"Email",
+		"isExactMatch":true,
+		"label":"Email"
+	  },
                         {"doCreate":false,"doFind":true,"fieldName":"Id","isExactMatch":true,"label":"LeadOrContactId"}],
             "entityName":"Contact",
             "showOnCreate": true,
             "saveToTranscript": "ContactId"
             }
             ];
-            //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-            //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-            //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-            //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-            // Settings for Chat
-            //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-                // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-                // Returns a valid button ID.
-            //};
-            //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-            //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-            //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 
             embedded_svc.settings.enabledFeatures = ['LiveAgent'];
             embedded_svc.settings.entryFeature = 'LiveAgent';
@@ -94,7 +101,7 @@
             initESW('https://service.force.com');
             }
             
-        //[Anamika-]-Added to make the chat button disappear
+        
         function checkAvailability() {
             const elementEnabled = document.getElementsByClassName('uiButton helpButtonEnabled');
             const elementDisabled = document.getElementsByClassName('uiButton helpButtonDisabled');
@@ -115,11 +122,6 @@
         document.addEventListener(
         "setCustomField",
         function(event) {
-            //console.log('event.detail.customField-'+event.detail.customField);
-            //console.log('event.detail.topic-'+event.detail.topic);
-    console.log('test');
-            //embedded_svc.settings.extraPrechatFormDetails[2].value = "test";
-            //embedded_svc.settings.extraPrechatFormDetails[1].value = "test";
             embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";
                     
             // Fire startChat callback.
