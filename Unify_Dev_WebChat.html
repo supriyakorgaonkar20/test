@@ -67,7 +67,7 @@
             "saveToTranscript": "ContactId"
             }
             ];
-            embedded_svc.settings.defaultMinimizedText = 'chat....'; //(Defaults to Chat with an Expert)
+            embedded_svc.settings.defaultMinimizedText = 'web chat'; //(Defaults to Chat with an Expert)
             //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
             //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
@@ -134,11 +134,7 @@
         document.addEventListener(
         "setCustomField",
         function(event) {
-            //console.log('event.detail.customField-'+event.detail.customField);
-            //console.log('event.detail.topic-'+event.detail.topic);
-    console.log('test');
-            //embedded_svc.settings.extraPrechatFormDetails[2].value = "test";
-            //embedded_svc.settings.extraPrechatFormDetails[1].value = "test";
+            
             embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";
                     
             // Fire startChat callback.
