@@ -18,6 +18,22 @@
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
     <script type='text/javascript'>
 	function myFunction() {
+		embedded_svc.init(
+                'https://unify-snhu--dev.my.salesforce.com',
+                'https://dev-mysnhu.cs197.force.com/applicantportal',
+                gslbBaseURL,
+                '00D040000004eI2',
+                'SNHU_Web_Chat',
+                {
+                    baseLiveAgentContentURL: 'https://c.la3-c1cs-ia4.salesforceliveagent.com/content',
+                    deploymentId: '572040000008OK6',
+                    buttonId: '573040000008OPV',
+                    baseLiveAgentURL: 'https://d.la3-c1cs-ia4.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2h000000008oEAA_179dbbafab9',
+                    isOfflineSupportEnabled: false
+                }
+            );
+	}
 	
             var initESW = function(gslbBaseURL) {
             embedded_svc.settings.displayHelpButton = true; //Or false
@@ -88,21 +104,7 @@
             embedded_svc.settings.enabledFeatures = ['LiveAgent'];
             embedded_svc.settings.entryFeature = 'LiveAgent';
 
-           	  embedded_svc.init(
-                'https://unify-snhu--dev.my.salesforce.com',
-                'https://dev-mysnhu.cs197.force.com/applicantportal',
-                gslbBaseURL,
-                '00D040000004eI2',
-                'SNHU_Web_Chat',
-                {
-                    baseLiveAgentContentURL: 'https://c.la3-c1cs-ia4.salesforceliveagent.com/content',
-                    deploymentId: '572040000008OK6',
-                    buttonId: '573040000008OPV',
-                    baseLiveAgentURL: 'https://d.la3-c1cs-ia4.salesforceliveagent.com/chat',
-                    eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2h000000008oEAA_179dbbafab9',
-                    isOfflineSupportEnabled: false
-                }
-            );
+           	  
             };
 
             if (!window.embedded_svc) {
@@ -115,7 +117,7 @@
             } else {
             initESW('https://service.force.com');
             }
-	}
+	
 	   	    
             
         //[Anamika-]-Added to make the chat button disappear
