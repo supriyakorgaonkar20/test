@@ -147,6 +147,13 @@
         },
         false
     );
+	    var buttonAll = document.querySelectorAll("button");
+	    var closeButton = buttonAll.forEach((button)=>{
+		    if(button.tittle == 'Close dialog'){
+		     button.addEventListener('click',()=>{		       
+                       document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
+		     })}
+	    })
         //End of Event Handler
     </script>
     </body>
