@@ -6,17 +6,28 @@
         <h1>Unify Dev Web Chat Testing</h1>
 	    <button onclick="myFunction()">Click me</button>
         <style type='text/css'>
+		
+
+		.embeddedServiceHelpButton .helpButton {
+       position: fixed;
+    bottom: 35%;
+    transform: rotate(270deg);
+    width: 2%;
+}
+  <style type='text/css'>
         .embeddedServiceHelpButton .helpButton .uiButton {
-        background-color: #ff0d15;
+        background-color: #ff0000;
         font-family: "Arial", sans-serif;
         }
         .embeddedServiceHelpButton .helpButton .uiButton:focus {
         outline: 1px solid #005290;
         }
+		
     </style>
 
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
     <script type='text/javascript'>
+	    
 	function myFunction() {
 	}
 	
@@ -31,11 +42,6 @@
             {
                 "label":"Topic",
                 "transcriptFields":[ "Chat_Subject__c" ],
-                "displayToAgent": true
-            },
-	    {
-                "label":"Email",
-                "transcriptFields":[ "TestField__c" ],
                 "displayToAgent": true
             }];
             console.log('setting-',embedded_svc.settings.extraPrechatFormDetails);
@@ -81,16 +87,6 @@
 
             //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
             //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-            // Settings for Chat
-            //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-                // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-                // Returns a valid button ID.
-            //};
-            //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-            //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-            //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
             embedded_svc.settings.enabledFeatures = ['LiveAgent'];
             embedded_svc.settings.entryFeature = 'LiveAgent';
             		embedded_svc.init(
@@ -136,31 +132,33 @@
                 document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
             }     
         }
-
+        document.addEventListener('chatcomponentload',(event)=>{
+	if(document.querySelector('c-snhuapowebprechat') != undefined){
+		    document.querySelector('c-snhuapowebprechat').campaign= 'Campaign'; 
+		    document.querySelector('c-snhuapowebprechat').source= 'Source';
+		    document.querySelector('c-snhuapowebprechat').medium= 'Medium';
+		    document.querySelector('c-snhuapowebprechat').content= 'Content';
+		    document.querySelector('c-snhuapowebprechat').term= 'Term';
+		    document.querySelector('c-snhuapowebprechat').googleID= 'Google_ID__c';
+		}	    
+	    })
     
         window.setInterval(function () {
             checkAvailability();
+		
         }, 500);
         //End
         //Eventhandler to get lead id from Aura
         document.addEventListener(
         "setCustomField",
         function(event) {
-            
             embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";
-                    
-            // Fire startChat callback.
+         
             event.detail.callback();
         },
         false
     );
-	    var buttonAll = document.querySelectorAll("button");
-	    var closeButton = buttonAll.forEach((button)=>{
-		    if(button.tittle == 'Close dialog'){
-		     button.addEventListener('click',()=>{		       
-                       document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
-		     })}
-	    })
+	    
         //End of Event Handler
     </script>
     </body>
