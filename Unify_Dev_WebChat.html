@@ -132,7 +132,6 @@
         }
         document.addEventListener('chatcomponentload',(event)=>{
 		console.log('chat fired');
-	if(document.querySelector('c-snhuapowebprechat_snhuapowebprechat') != undefined){
 		 console.log('component found')
 		    document.querySelector('c-snhuapowebprechat_snhuapowebprechat').campaign= 'Campaign'; 
 		    document.querySelector('c-snhuapowebprechat_snhuapowebprechat').source= 'Source';
@@ -140,7 +139,7 @@
 		    document.querySelector('c-snhuapowebprechat_snhuapowebprechat').content= 'Content';
 		    document.querySelector('c-snhuapowebprechat_snhuapowebprechat').term= 'Term';
 		    document.querySelector('c-snhuapowebprechat_snhuapowebprechat').googleID= 'Google_ID__c';
-		}	    
+			    
 	    })
     
         window.setInterval(function () {
