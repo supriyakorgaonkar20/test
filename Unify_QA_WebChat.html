@@ -1,23 +1,34 @@
-QA
-
 <html lang="en">
     <head>
 	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"> 
     </head>
     <body>
-    <h1>Unify QA Web Chat Testing</h1>
+        <h1>Unify Dev Web Chat Testing</h1>
+	   
         <style type='text/css'>
+		
+
+		.embeddedServiceHelpButton .helpButton {
+       position: fixed;
+    bottom: 35%;
+    transform: rotate(270deg);
+    width: 2%;
+}
+  <style type='text/css'>
         .embeddedServiceHelpButton .helpButton .uiButton {
-        background-color: #005290;
+        background-color: #ff0000;
         font-family: "Arial", sans-serif;
         }
         .embeddedServiceHelpButton .helpButton .uiButton:focus {
         outline: 1px solid #005290;
         }
+		
     </style>
 
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
     <script type='text/javascript'>
+	
+	
             var initESW = function(gslbBaseURL) {
             embedded_svc.settings.displayHelpButton = true; //Or false
             embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -69,25 +80,30 @@ QA
             "saveToTranscript": "ContactId"
             }
             ];
+            embedded_svc.settings.defaultMinimizedText = 'web chat'; //(Defaults to Chat with an Expert)
+            //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
+            //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+            //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
             embedded_svc.settings.enabledFeatures = ['LiveAgent'];
             embedded_svc.settings.entryFeature = 'LiveAgent';
-// for QA
-           	 embedded_svc.init(
-			'https://unify-snhu--qa1.my.salesforce.com',
-			'https://qa1-mysnhu.cs198.force.com/applicantportal',
-			gslbBaseURL,
-			'00D050000004dbf',
-			'SNHU_Web_Chat',
-			{
-				baseLiveAgentContentURL: 'https://c.la2-c1cs-ia4.salesforceliveagent.com/content',
-				deploymentId: '57205000000CaUp',
-				buttonId: '57305000000CabX',
-				baseLiveAgentURL: 'https://d.la2-c1cs-ia4.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2h000000008oEAA_179dbbafab9',
-				isOfflineSupportEnabled: false
-			}
-		);
+            embedded_svc.init(
+            'https://unify-snhu--qa1.my.salesforce.com',
+            'https://qa1-mysnhu.cs198.force.com/applicantportal',
+            gslbBaseURL,
+            '00D050000004dbf',
+            'SNHU_Web_Chat',
+            {
+                baseLiveAgentContentURL: 'https://c.la2-c1cs-ia4.salesforceliveagent.com/content',
+                deploymentId: '57205000000CaUp',
+                buttonId: '57305000000CabX',
+                baseLiveAgentURL: 'https://d.la2-c1cs-ia4.salesforceliveagent.com/chat',
+                eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2h000000008oEAA_179dbbafab9',
+                isOfflineSupportEnabled: false
+            }
+        );
+
+           	  
             };
 
             if (!window.embedded_svc) {
@@ -100,8 +116,10 @@ QA
             } else {
             initESW('https://service.force.com');
             }
+	
+	   	    
             
-        
+        //[Anamika-]-Added to make the chat button disappear
         function checkAvailability() {
             const elementEnabled = document.getElementsByClassName('uiButton helpButtonEnabled');
             const elementDisabled = document.getElementsByClassName('uiButton helpButtonDisabled');
@@ -112,10 +130,21 @@ QA
                 document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
             }     
         }
-
+        document.addEventListener('chatcomponentload',(event)=>{
+		console.log('chat fired');
+		 console.log('component found')
+		    document.querySelector('c-snhu-apo-web-pre-chat').campaign= 'Campaign'; 
+		    document.querySelector('c-snhu-apo-web-pre-chat').source= 'Source';
+		    document.querySelector('c-snhuapowebprechat_snhuapowebprechat').medium= 'Medium';
+		    document.querySelector('c-snhuapowebprechat_snhuapowebprechat').content= 'Content';
+		    document.querySelector('c-snhuapowebprechat_snhuapowebprechat').term= 'Term';
+		    document.querySelector('c-snhuapowebprechat_snhuapowebprechat').googleID= 'Google_ID__c';
+			    
+	    })
     
         window.setInterval(function () {
             checkAvailability();
+		
         }, 500);
         //End
         //Eventhandler to get lead id from Aura
@@ -123,12 +152,12 @@ QA
         "setCustomField",
         function(event) {
             embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";
-                    
-            // Fire startChat callback.
+         
             event.detail.callback();
         },
         false
     );
+	    
         //End of Event Handler
     </script>
     </body>
