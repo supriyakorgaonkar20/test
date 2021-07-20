@@ -131,7 +131,9 @@
             }     
         }
         document.addEventListener('chatcomponentload',(event)=>{
+		console.log('chat fired');
 	if(document.querySelector('c-snhuapowebprechat') != undefined){
+		 console.log('component found')
 		    document.querySelector('c-snhuapowebprechat').campaign= 'Campaign'; 
 		    document.querySelector('c-snhuapowebprechat').source= 'Source';
 		    document.querySelector('c-snhuapowebprechat').medium= 'Medium';
