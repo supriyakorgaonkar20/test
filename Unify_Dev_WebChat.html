@@ -131,8 +131,6 @@
             }     
         }
         document.addEventListener('chatcomponentload',(event)=>{
-		console.log('chat fired');
-		 console.log('component found')
 		    document.querySelector('c-snhu-apo-web-pre-chat').campaign= 'Campaign'; 
 		    document.querySelector('c-snhu-apo-web-pre-chat').source= 'Source';
 		    document.querySelector('c-snhu-apo-web-pre-chat').medium= 'Medium';
@@ -151,6 +149,8 @@
         document.addEventListener(
         "setCustomField",
         function(event) {
+             console.log('event ',event.detail.Id);
+	
             embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";
          
             event.detail.callback();
