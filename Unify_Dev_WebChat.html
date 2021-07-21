@@ -45,11 +45,6 @@
                 "label":"Topic",
                 "transcriptFields":[ "Chat_Subject__c" ],
                 "displayToAgent": true
-            },
-	    {
-                "label":"First Name",
-                "value":"abc",
-                "displayToAgent": true
             }];
             console.log('setting-',embedded_svc.settings.extraPrechatFormDetails);
             
@@ -146,6 +141,11 @@
 		    document.querySelector('c-snhu-apo-web-pre-chat').content= 'Content';
 		    document.querySelector('c-snhu-apo-web-pre-chat').term= 'Term';
 		    document.querySelector('c-snhu-apo-web-pre-chat').googleID= 'Google_ID__c';
+		    document.querySelectorAll("label").forEach((label)=>{
+			    if(label.innerHTML=='First Name'){
+			    label.innerHTML='Abir Rocks'}
+			    
+		    })
 			    
 	    })
     
