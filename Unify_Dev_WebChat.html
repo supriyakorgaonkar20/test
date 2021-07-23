@@ -132,7 +132,7 @@
             }     
         }
         document.addEventListener('chatcomponentload',(event)=>{
-		    
+		    var labelChangeArray =[{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}]
 		    document.querySelector('c-snhu-apo-web-pre-chat').campaign= 'Campaign'; 
 		    document.querySelector('c-snhu-apo-web-pre-chat').source= 'Source';
 		    document.querySelector('c-snhu-apo-web-pre-chat').medium= 'Medium';
@@ -141,6 +141,7 @@
 		    document.querySelector('c-snhu-apo-web-pre-chat').googleID= 'Google_ID__c';	
 		    document.querySelector('c-snhu-apo-web-pre-chat').landingPage = 'landingPage';
 		    document.querySelector('c-snhu-apo-web-pre-chat').referrer= 'referrer';
+		    document.querySelector('c-snhu-apo-web-pre-chat').updateLabelsFromSite(labelChangeArray) ;
 		    
 			    
 	    })
