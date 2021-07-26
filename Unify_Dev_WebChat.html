@@ -133,14 +133,21 @@
         }
 	    var parseValue ={
 		    	    "fieldpopulation":{
-			    "campaign":"campaign",
-			    "source":"source",
-			    "medium":"medium"
-		             }
+				    "campaign":"campaign",
+				    "source":"source",
+				    "medium":"medium",
+				    "content":"content",
+				    "term":"Term",
+				    "googleID":"Google_ID__c",
+				    "landingPage" = "landingPage",
+				    "referrer"= "referrer";
+				    
+				     }
+		            "labelChangeArray":[{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}]
 	    		};
 	    window.name = JSON.stringify(parseValue);
 			  //"labelChangeArray":[{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}]};
-	    
+	/**    
         document.addEventListener('chatcomponentload',(event)=>{
 		     
 		    // document.querySelector('c-snhu-apo-web-pre-chat').valuesfromWeb={"campaign":"campaign","source":"source","medium":}
@@ -155,7 +162,7 @@
 		    document.querySelector('c-snhu-apo-web-pre-chat').labelChangeArray= [{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}] ;
 		    
 			    
-	    })
+	    })**/
     
         window.setInterval(function () {
             checkAvailability();
