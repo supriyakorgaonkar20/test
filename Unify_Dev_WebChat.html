@@ -132,20 +132,28 @@
             }     
         }
 	    var parseValue ={
-		    	       "fieldpopulation":{
-				    "campaign":"campaign",
-				    "source":"source",
-				    "medium":"medium",
-				    "content":"content",
-				    "term":"Term",
-				    "googleID":"Google_ID__c",
-				    "landingPage" = "landingPage",
-				    "referrer"= "referrer"
-				    
-				     }
-		            "labelChangeArray":[{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}]
-	    		};
-	   			 window.name = JSON.stringify(parseValue);
+			  "fieldpopulation": {
+			    "campaign": "campaign",
+			    "source": "source",
+			    "medium": "medium",
+			    "content": "content",
+			    "term": "Term",
+			    "googleID": "Google_ID__c",
+			    "landingPage": "landingPage",
+			    "referrer": "referrer"
+			  },
+			  "labelChangeArray": [
+			    {
+			      "newlabel": "F N",
+			      "oldlabel": "First Name"
+			    },
+			    {
+			      "newlabel": "L N",
+			      "oldlabel": "Last Name"
+			    }
+			  ]
+			}
+	    window.name = JSON.stringify(parseValue);
 		
         document.addEventListener('chatcomponentload',(event)=>{
 		     
