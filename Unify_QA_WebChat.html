@@ -130,17 +130,34 @@
                 document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
             }     
         }
-        document.addEventListener('chatcomponentload',(event)=>{
-		console.log('chat fired');
-		 console.log('component found')
-		    document.querySelector('c-snhu-apo-web-pre-chat').campaign= 'Campaign'; 
-		    document.querySelector('c-snhu-apo-web-pre-chat').source= 'Source';
-		    document.querySelector('c-snhu-apo-web-pre-chat').medium= 'Medium';
-		    document.querySelector('c-snhu-apo-web-pre-chat').content= 'Content';
-		    document.querySelector('c-snhu-apo-web-pre-chat').term= 'Term';
-		    document.querySelector('c-snhu-apo-web-pre-chat').googleID= 'Google_ID__c';
-			    
-	    })
+       
+	   	    var parseValue ={
+			  "fieldpopulation": {
+			    "campaign": "campaign",
+			    "source": "source",
+			    "medium": "medium",
+			    "content": "content",
+			    "utm_term": "Term",
+			    "gclientid": "Google_ID__c",
+			    "landingPage": "landingPage",
+			    "referrer": "referrer"
+			  }/**,
+			  "labelChangeArray": [
+			    {
+			      "newlabel": "F N",
+			      "oldlabel": "First Name"
+			    },
+				  {
+			      "newlabel": "contact",
+			      "oldlabel": "Phone"
+			    }
+			    {
+			      "newlabel": "L N",
+			      "oldlabel": "Last Name"
+			    }
+			  ]**/
+			}
+	    window.name = JSON.stringify(parseValue);
     
         window.setInterval(function () {
             checkAvailability();
