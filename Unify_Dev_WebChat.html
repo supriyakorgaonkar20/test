@@ -132,7 +132,7 @@
             }     
         }
 	    var parseValue ={
-		    	      /** "fieldpopulation":{
+		    	       "fieldpopulation":{
 				    "campaign":"campaign",
 				    "source":"source",
 				    "medium":"medium",
@@ -143,14 +143,12 @@
 				    "referrer"= "referrer"
 				    
 				     }
-		            "labelChangeArray":[{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}]**/
+		            "labelChangeArray":[{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}]
 	    		};
-	   // window.name = JSON.stringify(parseValue);
-			  //"labelChangeArray":[{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}]};
-	/**    
+	   			 window.name = JSON.stringify(parseValue);
+		
         document.addEventListener('chatcomponentload',(event)=>{
 		     
-		    // document.querySelector('c-snhu-apo-web-pre-chat').valuesfromWeb={"campaign":"campaign","source":"source","medium":}
 		    document.querySelector('c-snhu-apo-web-pre-chat').campaign= 'Campaign'; 
 		    document.querySelector('c-snhu-apo-web-pre-chat').source= 'Source';
 		    document.querySelector('c-snhu-apo-web-pre-chat').medium= 'Medium';
@@ -162,7 +160,7 @@
 		    document.querySelector('c-snhu-apo-web-pre-chat').labelChangeArray= [{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}] ;
 		    
 			    
-	    })**/
+	    })
     
         window.setInterval(function () {
             checkAvailability();
