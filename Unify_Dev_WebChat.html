@@ -131,7 +131,11 @@
                 document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
             }     
         }
+	    window.name = {"campaign":"campaign","source":"source","medium":"medium"};
+	    
         document.addEventListener('chatcomponentload',(event)=>{
+		     
+		    // document.querySelector('c-snhu-apo-web-pre-chat').valuesfromWeb={"campaign":"campaign","source":"source","medium":}
 		    document.querySelector('c-snhu-apo-web-pre-chat').campaign= 'Campaign'; 
 		    document.querySelector('c-snhu-apo-web-pre-chat').source= 'Source';
 		    document.querySelector('c-snhu-apo-web-pre-chat').medium= 'Medium';
