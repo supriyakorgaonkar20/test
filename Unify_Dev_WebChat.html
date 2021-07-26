@@ -131,13 +131,14 @@
                 document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
             }     
         }
-	    window.name = {
-		    "fieldpopulation":{
+	    var parseValue ={
+		    	    "fieldpopulation":{
 			    "campaign":"campaign",
 			    "source":"source",
 			    "medium":"medium"
-		    }
-	    };
+		             }
+	    		};
+	    window.name = JSON.stringify(parseValue);
 			  //"labelChangeArray":[{"newlabel":"F N","oldlabel":"First Name"},{"newlabel":"L N","oldlabel":"Last Name"}]};
 	    
         document.addEventListener('chatcomponentload',(event)=>{
