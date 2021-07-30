@@ -187,6 +187,9 @@
 	    document.getElementsByClassName("messageContent").addEventListener('focus',()=>{
 	    console.log('removing focus');
 	    })
+	    document.addEventListener('afterMaximize',()={
+		    console.log('maximized called')
+	    })
 	    
         //End of Event Handler
     </script>
