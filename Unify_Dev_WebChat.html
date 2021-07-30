@@ -184,10 +184,10 @@
         },
         false
     );
-	    document.getElementsByClassName("messageContent").addEventListener('focus',()=>{
+	    document.getElementsByClassName("sidebarHeader minimizedContainer helpButton embeddedServiceSidebarMinimizedDefaultUI").addEventListener('click',()=>{
 	    console.log('removing focus');
 	    })
-	    document.addEventListener('afterMaximize',()=>{
+	    embedded_svc.addEventListener('afterMaximize',()=>{
 		    console.log('maximized called')
 	    })
 	    
