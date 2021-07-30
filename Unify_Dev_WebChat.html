@@ -184,8 +184,9 @@
         },
         false
     );
-	    document.getElementsByClassName("embeddedServiceSidebarMinimizedDefaultUI").addEventListener('click',()=>{
+	    document.getElementsByClassName("embeddedServiceSidebarMinimizedDefaultUI").addEventListener('focus',()=>{
 	    console.log('removing focus');
+		    document.getElementsByClassName("embeddedServiceSidebarMinimizedDefaultUI").blur();
 	    })
 	    embedded_svc.addEventListener('afterMaximize',()=>{
 		    console.log('maximized called')
