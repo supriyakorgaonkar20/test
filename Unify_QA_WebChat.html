@@ -131,16 +131,23 @@
             }     
         }
        
-	   	    var parseValue ={
+	    var parseValue ={
 			  "fieldpopulation": {
-			    "campaign": "campaign",
-			    "source": "source",
-			    "medium": "medium",
-			    "content": "content",
-			    "utm_term": "Term",
-			    "gclientid": "Google_ID__c",
-			    "landingPage": "landingPage",
-			    "referrer": "referrer"
+			     "campaign": (cbTrackerValues['utm_campaign'] !== undefined) ? cbTrackerValues['utm_campaign']  : '',
+
+                              "source": (cbTrackerValues['utm_source'] !== undefined) ? cbTrackerValues['utm_source']  : '',
+
+                               "medium": (cbTrackerValues['utm_medium'] !== undefined) ? cbTrackerValues['utm_medium']  : '',
+
+                               "content": (cbTrackerValues['utm_content'] !== undefined) ? cbTrackerValues['utm_content']  : '',
+
+                                "utm_term": (cbTrackerValues['utm_term'] !== undefined) ? cbTrackerValues['utm_term']  : '',
+
+                                "gclientid": (cbTrackerValues['Google_ID__c'] !== undefined) ? cbTrackerValues['Google_ID__c']  : '',
+
+                                 "landingPage": (cbTrackerValues['Landing_Page'] !== undefined) ? cbTrackerValues['Landing_Page']  : '',
+
+                                  "referrer": (cbTrackerValues['Referrer'] !== undefined) ? cbTrackerValues['Referrer']  : ''
 			  }/**,
 			  "labelChangeArray": [
 			    {
